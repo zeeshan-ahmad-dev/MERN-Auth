@@ -23,7 +23,6 @@ const Login = () => {
       
       if (state === 'Sign up') {
         const { data } = await axios.post(`${backendUrl}/api/auth/register`, { name,email, password });
-        console.log(data)
 
         if (data.success) {
           setIsLoggedin(true);
@@ -102,7 +101,7 @@ const Login = () => {
               required
             />
           </div>
-          {state === "Sign up" && (
+          {state !== "Sign up" && (
             <p onClick={() => navigate('/reset-password')} className="mb-4 text-indigo-500 cursor-pointer text-center">
               Forgot password?
             </p>

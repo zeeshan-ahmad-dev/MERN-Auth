@@ -7,7 +7,6 @@ const Header = () => {
   const navigate = useNavigate();
   
   const { userData } = useContext(AppContext)
-  console.log(userData)
 
   return (
     <div className="flex flex-col items-center mt-20 px-4 text-center text-gray-800">
