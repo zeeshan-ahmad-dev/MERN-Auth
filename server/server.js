@@ -1,6 +1,6 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import 'dotenv/config';
 import cookieParser from 'cookie-parser'
 import connectDB from './config/mongodb.js';
 import authRouter from './routes/authRoutes.js';
@@ -18,7 +18,7 @@ app.use(cors({origin: allowedOrigin, credentials: true}));
 
 
 // API Endpoints
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     res.json({hi: "HI, Zeeshan Ahmad"})
 })
 app.use('/api/auth', authRouter)
